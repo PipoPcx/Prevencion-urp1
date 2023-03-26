@@ -12,6 +12,7 @@ TagManager:
   - Plataforma
   - Escalera1
   - Escalera2
+  - Teleporter
   layers:
   - Default
   - TransparentFX

@@ -1,10 +1,11 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Teletransport : MonoBehaviour
 {
-    
+
 
     public Transform entryPortal;
     public Transform exitPortal;
@@ -34,3 +35,4 @@ public class Teletransport : MonoBehaviour
     }
 
 }
+
