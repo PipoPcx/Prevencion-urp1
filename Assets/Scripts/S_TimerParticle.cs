@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class S_TimerParticle : MonoBehaviour
 {
-    [SerializeField] private float deactivateTime = 2.0f * Time.deltaTime;
-    [SerializeField] private float reactivateTime = 1.0f * Time.deltaTime;
+    [SerializeField] private float deactivateTime = 2.0f;
+    [SerializeField] private float reactivateTime = 1.0f;
 
     private float timer = 0f;
 
