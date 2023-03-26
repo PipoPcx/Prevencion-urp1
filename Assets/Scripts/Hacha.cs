@@ -23,8 +23,8 @@ public class Hacha : MonoBehaviour
     {
         if (hacha != null)
         {
-            Collider hachaCollider = hacha.GetComponent<Collider>();
-            hachaCollider.isTrigger = true;
+            Collider hachaCollider = hachaChica.GetComponent<Collider>();
+            hachaCollider.enabled = true;
 
            
             animator.SetBool("Ataque", true);
@@ -36,6 +36,8 @@ public class Hacha : MonoBehaviour
     void DesactivarAtaque()
     {
         animator.SetBool("Ataque", false);
+        Collider hachaCollider = hachaChica.GetComponent<Collider>();
+        hachaCollider.enabled = false;
     }
 
     void OnCollisionEnter(Collision col)
