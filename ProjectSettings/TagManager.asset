@@ -13,6 +13,7 @@ TagManager:
   - Escalera1
   - Escalera2
   - Teleporter
+  - Puntos
   layers:
   - Default
   - TransparentFX
