@@ -7,12 +7,18 @@ public class Escalera : MonoBehaviour
 {
     
     public GameObject escalera;
-    public GameObject player;
-    public Button boton;
-    public GameObject objetoVacio;
+    public GameObject escalera1;
+    public GameObject escalera2;
     public GameObject escaleraUno;
     public GameObject escaleraDos;
+    public GameObject escaleraTres;
+    public GameObject escaleraCuatro;
+    public GameObject escaleraCinco;
+    public GameObject escaleraSeis;
     
+
+
+
 
     private void Start()
     {
@@ -27,25 +33,49 @@ public class Escalera : MonoBehaviour
             escalera.SetActive(true);
             Collider escaleraCollider = escalera.GetComponent<Collider>();
             escaleraCollider.isTrigger = true;
-            boton.gameObject.SetActive(false);
-           // escalera.transform.position = player.transform.position;
-            escalera.transform.SetPositionAndRotation(objetoVacio.transform.position, objetoVacio.transform.rotation);
+            escalera.SetActive(true);
+            Collider escaleraCollider1 = escalera1.GetComponent<Collider>();
+            escaleraCollider1.isTrigger = true;
+            escalera.SetActive(true);
+            Collider escaleraCollider2 = escalera2.GetComponent<Collider>();
+            escaleraCollider2.isTrigger = true;
 
 
-            
+
+
 
         }
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnCollisionStay(Collision col)
     {
         if (col.gameObject.CompareTag("Escalera"))
         {
-            boton.gameObject.SetActive(true);
+            
             col.gameObject.SetActive(false);
             escaleraUno.SetActive(false);
             escaleraDos.SetActive(true);
+         
+        }
+
+        if (col.gameObject.CompareTag("Escalera1"))
+        {
+
+            col.gameObject.SetActive(false);
+            escaleraTres.SetActive(false);
+            escaleraCuatro.SetActive(true);
+
+        }
+        if (col.gameObject.CompareTag("Escalera2"))
+        {
+
+            col.gameObject.SetActive(false);
+            escaleraCinco.SetActive(false);
+            escaleraSeis.SetActive(true);
+
         }
     }
+            
+           
 
 }

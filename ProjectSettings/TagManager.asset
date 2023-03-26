@@ -10,6 +10,8 @@ TagManager:
   - Escalera sin trigger
   - EscaleraSinTrigger
   - Plataforma
+  - Escalera1
+  - Escalera2
   layers:
   - Default
   - TransparentFX
