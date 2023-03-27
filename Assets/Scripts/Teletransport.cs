@@ -52,6 +52,14 @@ public class Teletransport : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+                       camara.transform.position = posicionCamara.transform.position;
+        }
+    }
+
     private void EnableExitPortalCollider()
 
     {
