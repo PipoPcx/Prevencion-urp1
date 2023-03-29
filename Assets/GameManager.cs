@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int puntos = 0;
+    public int puntos = 0;
     
     public void sumarPuntos(int puntosGanados)
     {
