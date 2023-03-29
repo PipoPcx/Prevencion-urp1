@@ -15,7 +15,7 @@ public class Teletransport : MonoBehaviour
     public GameObject camara;
     public GameObject posicionCamara;
     public float offSet;
-    private ThirdPersonUserControl tPC;
+    //private ThirdPersonUserControl tPC;
     
 
     private void OnTriggerEnter(Collider other)
@@ -43,10 +43,10 @@ public class Teletransport : MonoBehaviour
 
             }
 
-            tPC =other.GetComponent<ThirdPersonUserControl>();
-            tPC.canMove = false;
+            //tPC =other.GetComponent<ThirdPersonUserControl>();
+           // tPC.canMove = false;
 
-            tPC.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+           // tPC.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
             Invoke(nameof(EnableExitPortalCollider), 1f);
         }
@@ -64,7 +64,7 @@ public class Teletransport : MonoBehaviour
 
     {
         exitPortal.gameObject.SetActive(true);
-        tPC.canMove = true;
+        //tPC.canMove = true;
 
 
     }
