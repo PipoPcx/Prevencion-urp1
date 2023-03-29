@@ -9,7 +9,7 @@ public class S_ParticleCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
         }
     }
 }
