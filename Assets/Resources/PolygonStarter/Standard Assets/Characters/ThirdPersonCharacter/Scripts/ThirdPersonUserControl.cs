@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+ 
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -14,6 +15,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;
         public bool canMove;
+        public Joystick m_Joystick;
         
         // the world-relative desired move direction, calculated from the camForward and user input.
 
@@ -42,6 +44,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                
             }
         }
 
@@ -55,7 +58,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (canMove)
             {
-                v = CrossPlatformInputManager.GetAxis("Horizontal");
+               // v = CrossPlatformInputManager.GetAxis("Horizontal");
+                v = m_Joystick.Horizontal;
             }
 
 
