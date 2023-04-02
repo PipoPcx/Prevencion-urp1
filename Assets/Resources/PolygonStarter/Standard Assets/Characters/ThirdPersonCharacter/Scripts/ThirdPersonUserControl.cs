@@ -16,10 +16,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private bool m_Jump;
         public bool canMove;
         public Joystick m_Joystick;
-        
+        public AudioSource pasos;
+        private bool crouch;
+
         // the world-relative desired move direction, calculated from the camForward and user input.
 
-        
+
         private void Start()
         {
             // get the transform of the main camera
@@ -55,15 +57,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // read inputs
             float h = CrossPlatformInputManager.GetAxis("Vertical");
             float v = 0;
+            
 
             if (canMove)
             {
-               // v = CrossPlatformInputManager.GetAxis("Horizontal");
+                v = CrossPlatformInputManager.GetAxis("Horizontal");
                 v = m_Joystick.Horizontal;
+                
+
             }
 
 
-            bool crouch = Input.GetKey(KeyCode.C);
+            //bool crouch = Input.GetKey(KeyCode.C);
 
             // calculate move direction to pass to character
             if (m_Cam != null)
@@ -77,6 +82,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 // we use world-relative directions in the case of no main camera
                 m_Move = v * Vector3.forward; // + h*Vector3.right;
             }
+
+            
+
+
+
 #if !MOBILE_INPUT
 			// walk speed multiplier
 	        if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
@@ -87,6 +97,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_Jump = false;
         }
 
+        public void Crounch(bool value)
+        {
+            crouch = value;
+            print(value);
+        }
     }
 
 

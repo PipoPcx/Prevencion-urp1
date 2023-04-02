@@ -12,6 +12,7 @@ public class Hacha : MonoBehaviour
     public Transform mano;
     public GameObject hachaGrande;
     public GameObject hachaChica;
+    public AudioClip clip;
 
 
     private void Start()
@@ -28,6 +29,7 @@ public class Hacha : MonoBehaviour
 
            
             animator.SetBool("Ataque", true);
+            GetComponent<AudioSource>().PlayOneShot(clip);
 
             Invoke("DesactivarAtaque", 1.0f);
         }

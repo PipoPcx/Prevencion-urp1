@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AnimatorEvents : MonoBehaviour
 {
+   
     // Este método se llamará cuando termine la animación
     public void OnAnimationEnd()
     {
@@ -10,5 +11,6 @@ public class AnimatorEvents : MonoBehaviour
 
         // Configura el valor del bool "Ataque" en false
         animator.SetBool("Ataque", false);
+        
     }
 }
