@@ -9,3 +9,4 @@ public class SalirJuego : MonoBehaviour
     {
         Application.Quit();
     }
+}
